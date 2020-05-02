@@ -17,7 +17,7 @@ Feature: Login
     When user logs as a store manager
     Then user should verify that title is a Dashboard
 
-    @driver
+    @driver @dashboard
   Scenario: Login as driver and verify that title is Dashboard
     Given user is on the login page
     When user logs in as a driver
