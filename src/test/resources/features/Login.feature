@@ -10,12 +10,12 @@ Feature: Login
 
     @sales_manager
   Scenario: Login as sales manager and verify that title is Dashboard
-    When user logs as a sales manager
+    When user logs in as a sales manager
     Then user should verify that title is a Dashboard
 
     @store_manager
   Scenario: Login as store manager and verify that title is Dashboard
-    When user logs as a store manager
+    When user logs in as a store manager
     Then user should verify that title is a Dashboard
 
     @driver @dashboard
