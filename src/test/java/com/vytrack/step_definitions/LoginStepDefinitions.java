@@ -16,7 +16,7 @@ public class LoginStepDefinitions {
     public void user_is_on_the_login_page() {
         System.out.println("open login page");
 
-        String URL = ConfigurationReader.getProperty("qa1");
+        String URL = ConfigurationReader.getProperty("qa3");
         Driver.getDriver().get(URL);
     }
 

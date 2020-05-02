@@ -37,9 +37,11 @@
                     <useUnlimitedThreads>true</useUnlimitedThreads>
                     <includes>
                         <!-- for  run class or classes-->
-                        <include>**/CucumberRunner*.java</include>
+                        <include>**/*Runner.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
+                    <!-- to rerun failed test automatically-->
+                 <!--   <rerunFailingTestsCount>1</rerunFailingTestsCount>    -->
                 </configuration>
             </plugin>
 
