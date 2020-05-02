@@ -54,19 +54,19 @@ public class CalendarsEventsPage extends AbstractPageBase {
     public void enterCalenderEventTitle(String titleValue){
         BrowserUtilities.waitForPageToLoad(20);
         wait.until(ExpectedConditions.visibilityOf(title)).sendKeys(titleValue);
-        wait.until(ExpectedConditions.attributeToBe(title, "value", titleValue));
+       // wait.until(ExpectedConditions.attributeToBe(title, "value", titleValue));
     }
 
     public void enterCalenderEventDescription(String description){
         //wait until frame is available and switch to it
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(descriptionFrame));
         descriptionTextArea.sendKeys(description);
-        wait.until(ExpectedConditions.textToBePresentInElement(descriptionTextArea, description));
+        //wait.until(ExpectedConditions.textToBePresentInElement(descriptionTextArea, description));
         driver.switchTo().defaultContent(); // exit from the frame
     }
 
     public void clickOnSaveAndClose(){
-        BrowserUtilities.wait(5);
+        BrowserUtilities.wait(10);
         wait.until(ExpectedConditions.elementToBeClickable(saveAndClose)).click();
     }
 
