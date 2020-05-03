@@ -42,9 +42,6 @@ public class CalendarsEventsPage extends AbstractPageBase {
     @FindBy(id = "tinymce")
     private WebElement descriptionTextArea;
 
-    @FindBy(css = "[class='btn-group pull-right'] > button")
-    private WebElement saveAndClose;
-
     @FindBy(xpath = "(//div[@class=\"control-label\"])[1]")
     private WebElement generalInfoTitle;
 
@@ -77,11 +74,6 @@ public class CalendarsEventsPage extends AbstractPageBase {
         descriptionTextArea.sendKeys(description);
         //wait.until(ExpectedConditions.textToBePresentInElement(descriptionTextArea, description));
         driver.switchTo().defaultContent(); // exit from the frame
-    }
-
-    public void clickOnSaveAndClose(){
-        BrowserUtilities.wait(10);
-        wait.until(ExpectedConditions.elementToBeClickable(saveAndClose)).click();
     }
 
     public String getGeneralInfoTitleText(){
