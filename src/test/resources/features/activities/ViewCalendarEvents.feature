@@ -8,6 +8,6 @@
       And user navigates to "Activities" and "Calendar Events"
       Then View Per Page menu should have following options
         | 10  |
-        | 20  |
+        | 25  |
         | 50  |
         | 100 |
