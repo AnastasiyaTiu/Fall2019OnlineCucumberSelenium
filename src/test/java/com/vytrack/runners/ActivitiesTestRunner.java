@@ -4,11 +4,11 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-@RunWith(Cucumber.class)
+@RunWith((Cucumber.class))
 @CucumberOptions(
         glue = "com/vytrack/step_definitions",
-        features = "src/test/resources/features",
-        dryRun = false,
+        features = "src/test/resources/features/activities",
+        dryRun = true,
         strict = false,
         tags = "",
         plugin = {
@@ -16,6 +16,9 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json"
         }
 )
-public class CucumberRunner {
+
+public class ActivitiesTestRunner {
+
+
 
 }
