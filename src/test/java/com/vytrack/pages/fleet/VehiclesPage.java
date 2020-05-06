@@ -26,7 +26,7 @@ public class VehiclesPage extends com.vytrack.pages.AbstractPageBase {
     private WebElement modelYear;
 
     @FindBy(css = "input[name='custom_entity_type[Color]']")
-    private WebElement color;
+    private WebElement colorInput;
 
     @FindBy(xpath = "(//button[@type='submit'])[1]")
     private WebElement submit;
@@ -39,19 +39,28 @@ public class VehiclesPage extends com.vytrack.pages.AbstractPageBase {
     }
 
     public void setDriverInput(String driver) {
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='custom_entity_type[Driver]']")));
+        wait.until(ExpectedConditions.visibilityOf(driverInput));
         driverInput.sendKeys(driver);
     }
 
     public void setLocationInput(String location) {
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='custom_entity_type[Location]']")));
+        wait.until(ExpectedConditions.visibilityOf(locationInput));
         locationInput.sendKeys(location);
     }
 
     public void setModelYear(String year) {
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='custom_entity_type[ModelYear]']")));
+        BrowserUtilities.wait(3);
         modelYear.sendKeys(year);
     }
 
     public void setColor(String color) {
-        this.color.sendKeys(color);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='custom_entity_type[Color]']")));
+        wait.until(ExpectedConditions.visibilityOf(colorInput));
+        BrowserUtilities.wait(3);
+        colorInput.sendKeys(color);
     }
 
     public void submit() {
@@ -59,14 +68,15 @@ public class VehiclesPage extends com.vytrack.pages.AbstractPageBase {
     }
 
     public void clickToCreateCar() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        BrowserUtilities.wait(3);
         wait.until(ExpectedConditions.elementToBeClickable(createCar)).click();
     }
 
     public String getCarGeneralInfo(String parameter) {
         String xpath = "//label[text()='" + parameter + "']/following-sibling::div/div";
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+        BrowserUtilities.wait(3);
         return driver.findElement(By.xpath(xpath)).getText().trim();
     }
-
 }

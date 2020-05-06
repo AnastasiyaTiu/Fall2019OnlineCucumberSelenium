@@ -67,5 +67,6 @@ public abstract class AbstractPageBase {
                 build().perform();
 
         BrowserUtilities.wait(7);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("[class*='loader-mask']")));
     }
 }
