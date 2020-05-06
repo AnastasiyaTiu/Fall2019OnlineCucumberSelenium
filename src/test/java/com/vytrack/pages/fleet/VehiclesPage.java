@@ -41,12 +41,14 @@ public class VehiclesPage extends com.vytrack.pages.AbstractPageBase {
     public void setDriverInput(String driver) {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='custom_entity_type[Driver]']")));
         wait.until(ExpectedConditions.visibilityOf(driverInput));
+        BrowserUtilities.wait(3);
         driverInput.sendKeys(driver);
     }
 
     public void setLocationInput(String location) {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='custom_entity_type[Location]']")));
         wait.until(ExpectedConditions.visibilityOf(locationInput));
+        BrowserUtilities.wait(3);
         locationInput.sendKeys(location);
     }
 

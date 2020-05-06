@@ -14,6 +14,8 @@ Feature: Create a car
       | License Plate | Driver | Location    | Model Year | Color |
       | SDET          | Racer  | Roma, Italy | 2020       | White |
 
+
+  @create_car_ddt
   Scenario Outline: Add new car for driver <driver>
     Given user is on the login page
     When user logs in as a sales manager
