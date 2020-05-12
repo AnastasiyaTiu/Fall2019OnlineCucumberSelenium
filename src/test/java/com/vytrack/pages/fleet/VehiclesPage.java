@@ -41,27 +41,29 @@ public class VehiclesPage extends com.vytrack.pages.AbstractPageBase {
     public void setDriverInput(String driver) {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='custom_entity_type[Driver]']")));
         wait.until(ExpectedConditions.visibilityOf(driverInput));
-        BrowserUtilities.wait(3);
+//        BrowserUtilities.wait(3);
         driverInput.sendKeys(driver);
     }
 
     public void setLocationInput(String location) {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='custom_entity_type[Location]']")));
         wait.until(ExpectedConditions.visibilityOf(locationInput));
-        BrowserUtilities.wait(3);
+//        BrowserUtilities.wait(3);
         locationInput.sendKeys(location);
+        // this wait not working with my pc, BUT working with Vasil's
+       // wait.until(ExpectedConditions.attributeToBe(locationInput,"value", location));
     }
 
     public void setModelYear(String year) {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='custom_entity_type[ModelYear]']")));
-        BrowserUtilities.wait(3);
+//        BrowserUtilities.wait(3);
         modelYear.sendKeys(year);
     }
 
     public void setColor(String color) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='custom_entity_type[Color]']")));
-        wait.until(ExpectedConditions.visibilityOf(colorInput));
-        BrowserUtilities.wait(3);
+//        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='custom_entity_type[Color]']")));
+//        wait.until(ExpectedConditions.visibilityOf(colorInput));
+//        BrowserUtilities.wait(3);
         colorInput.sendKeys(color);
     }
 
@@ -70,9 +72,8 @@ public class VehiclesPage extends com.vytrack.pages.AbstractPageBase {
     }
 
     public void clickToCreateCar() {
-        WebDriverWait wait = new WebDriverWait(driver, 15);
-        BrowserUtilities.wait(3);
         wait.until(ExpectedConditions.elementToBeClickable(createCar)).click();
+        waitForLoaderMask();
     }
 
     public String getCarGeneralInfo(String parameter) {

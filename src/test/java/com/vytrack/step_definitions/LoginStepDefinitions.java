@@ -17,14 +17,13 @@ public class LoginStepDefinitions {
         System.out.println("open login page");
 
         String URL = ConfigurationReader.getProperty("qa3");
+        System.out.println("URL :: " + URL);
         Driver.getDriver().get(URL);
     }
-
 
     @When("user logs in as a sales manager")
     public void user_logs_in_as_a_sales_manager() {
         System.out.println("Login as sales manager");
-
         loginPage.login("salesmanager110", "UserUser123");
     }
 
