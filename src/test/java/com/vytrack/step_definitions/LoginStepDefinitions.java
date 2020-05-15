@@ -7,7 +7,7 @@ import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
+import org.testng.Assert;
 
 public class LoginStepDefinitions {
     LoginPage loginPage = new LoginPage();
@@ -16,7 +16,7 @@ public class LoginStepDefinitions {
     public void user_is_on_the_login_page() {
         System.out.println("open login page");
 
-        String URL = ConfigurationReader.getProperty("qa3");
+        String URL = ConfigurationReader.getProperty("qa2");
         System.out.println("URL :: " + URL);
         Driver.getDriver().get(URL);
     }

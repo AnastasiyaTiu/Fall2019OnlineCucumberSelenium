@@ -67,7 +67,7 @@ public abstract class AbstractPageBase {
                 click(moduleElement).
                 build().perform();
 
-        BrowserUtilities.wait(4);
+        BrowserUtilities.wait(6);
         waitForLoaderMask();
     }
 
@@ -76,6 +76,7 @@ public abstract class AbstractPageBase {
      * if loader mask is present, website is loading some data and you cannot perform any operations
      */
     public void waitForLoaderMask(){
+        BrowserUtilities.wait(4);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("[class*='loader-mask']")));
     }
 }

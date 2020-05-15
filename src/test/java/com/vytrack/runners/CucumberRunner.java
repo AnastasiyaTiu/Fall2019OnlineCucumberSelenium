@@ -1,10 +1,8 @@
 package com.vytrack.runners;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 
-@RunWith(Cucumber.class)
 @CucumberOptions(
         glue = "com/vytrack/step_definitions",
         features = "src/test/resources/features",
@@ -17,6 +15,6 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"
         }
 )
-public class CucumberRunner {
+public class CucumberRunner extends AbstractTestNGCucumberTests {
 
 }
