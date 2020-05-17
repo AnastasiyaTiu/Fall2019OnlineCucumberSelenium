@@ -60,7 +60,7 @@ public abstract class AbstractPageBase {
 
         Actions actions = new Actions(driver);
 
-        BrowserUtilities.wait(4);
+        BrowserUtilities.wait(5);
 
         actions.moveToElement(tabElement).
                 pause(2000).
