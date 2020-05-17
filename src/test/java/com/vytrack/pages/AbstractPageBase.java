@@ -60,14 +60,14 @@ public abstract class AbstractPageBase {
 
         Actions actions = new Actions(driver);
 
-        BrowserUtilities.wait(5);
+        BrowserUtilities.wait(4);
 
         actions.moveToElement(tabElement).
                 pause(2000).
                 click(moduleElement).
                 build().perform();
 
-        BrowserUtilities.wait(4);
+        BrowserUtilities.wait(6);
         waitForLoaderMask();
     }
 
