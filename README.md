@@ -14,8 +14,12 @@ clean test -P Regression
 
 To run feature files in parallel without limiting number of threads:
 
-<parallel>methods</parallel>
+   <parallel>methods</parallel>
    <useUnlimitedThreads>true</useUnlimitedThreads>
    <includes>
      <include>**/RegressionRunner*.java</include>
    </includes> 
+   
+   To specify browser type, use parameter -Dbrowser=browserType:
+   
+   clean test -Dbrowser=firefox -Denv=qa3 -P Regression
