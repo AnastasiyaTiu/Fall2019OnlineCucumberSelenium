@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         plugin = {
                 "html:target/default-report-for-regression",
                 "json:target/cucumber_regression.json",
-                "return:target/return_regression.txt"
+                "return:target/rerun_regression.txt"
         }
 )
 
