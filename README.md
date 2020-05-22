@@ -41,5 +41,9 @@ NOTE: add mvn before every command if you are not running it on Jenkins:
     mvn test -Dbrowser=firefox -Denv=qa2 -P Regression
 
 To read in Java something -Dparam use --> System.getProperty("param")
+
+To run regression over selenium grid
+    
+    clean test -Dbrowser=chrome-remote -P Regression
    
    
