@@ -48,15 +48,15 @@ public class Driver {
                     chromeOptions.addArguments("--start-maximized");
                     driverPool.set(new ChromeDriver(chromeOptions));
                     break;
-                case "remote-chrome":
-                    chromeOptions = new ChromeOptions();
-                    try {
-                        URL url = new URL("http://54.210.195.210:4444/wd/hub");
-                        driverPool.set(new RemoteWebDriver(url, chromeOptions));
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    }
-                    break;
+//                case "remote-chrome":
+//                    chromeOptions = new ChromeOptions();
+//                    try {
+//                        URL url = new URL("http://54.210.195.210:4444/wd/hub");
+//                        driverPool.set(new RemoteWebDriver(url, chromeOptions));
+//                    } catch (MalformedURLException e) {
+//                        e.printStackTrace();
+//                    }
+//                    break;
 
                 case "chromeheadless":
                     // to run chrome without interface (headless model)
@@ -65,26 +65,26 @@ public class Driver {
                     options.setHeadless(true);
                     driverPool.set(new ChromeDriver(options));
                     break;
-//                case "chrome-remote":
-//                    try {
-//                        // we create object of URL and specify
-//                        // selenium grid hub as a parameter
-//                        // make sure it ends with /wd/hub
-//
-//                        URL url = new URL("http://52.207.248.8:4444/wd/hub");
-//
-//                        // desiredCapabilities used to specify what kind of node
-//                        // is required for testing
-//                        // such as OS type, browser, versions, etc...
-//                        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-//                        desiredCapabilities.setBrowserName(BrowserType.CHROME);
-//                        desiredCapabilities.setPlatform(Platform.ANY);
-//
-//                        driverPool.set(new RemoteWebDriver(url, desiredCapabilities));
-//                    } catch (MalformedURLException e) {
-//                        e.printStackTrace();
-//                    }
-//                    break;
+                case "chrome-remote":
+                    try {
+                        // we create object of URL and specify
+                        // selenium grid hub as a parameter
+                        // make sure it ends with /wd/hub
+
+                        URL url = new URL("http://54.210.195.210:4444/wd/hub");
+
+                        // desiredCapabilities used to specify what kind of node
+                        // is required for testing
+                        // such as OS type, browser, versions, etc...
+                        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+                        desiredCapabilities.setBrowserName(BrowserType.CHROME);
+                        desiredCapabilities.setPlatform(Platform.ANY);
+
+                        driverPool.set(new RemoteWebDriver(url, desiredCapabilities));
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
